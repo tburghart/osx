@@ -1,6 +1,57 @@
-# Xcode
+#
+# Eclipse
+#
+.project
+.settings/
+
+#
+# Editors
+#
+*~
+*.bak
+
+#
+# Runtime Gunk
+#
+tmp/
+*.dump
+*.err
+*.log
+*.out
+*.tmp
+
+#
+# Compilers
 #
 build/
+obj/
+*.a
+*.class
+*.gch
+*.i
+*.la
+*.lo
+*.o
+*.obj
+*.p
+*.pch
+*.slo
+
+#
+# Linkers & Archivers
+#
+*.dll
+*.dylib
+*.ear
+*.exe
+*.jar
+*.lib
+*.so
+*.war
+
+#
+# Xcode
+#
 *.pbxuser
 !default.pbxuser
 *.mode1v3
