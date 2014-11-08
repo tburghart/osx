@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BeginTransactionAtShutdown</key>
+	<true/>
+	<key>EnableTransactions</key>
+	<true/>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>USE_DEFAULT_COMPUTERNAME_WITHOUT_MODEL</key>
+		<string>1</string>
+	</dict>
+	<key>GroupName</key>
+	<string>_mdnsresponder</string>
+	<key>InitGroups</key>
+	<false/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.apple.networking.discoveryd</string>
+	<key>MachServices</key>
+	<dict>
+		<key>com.apple.d2d.ipc</key>
+		<dict>
+			<key>ResetAtClose</key>
+			<true/>
+		</dict>
+		<key>com.apple.discoveryd</key>
+		<true/>
+		<key>com.apple.discoveryd.dnsproxy</key>
+		<true/>
+	</dict>
+	<key>POSIXSpawnType</key>
+	<string>Interactive</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/libexec/discoveryd</string>
+		<string>--udsocket</string>
+		<string>standard</string>
+		<string>--loglevel</string>
+		<string>Basic</string>
+		<string>--logclass</string>
+		<string>Everything</string>
+		<string>--logto</string>
+		<string>asl</string>
+	</array>
+	<key>Sockets</key>
+	<dict>
+		<key>ServiceDiscovery</key>
+		<dict>
+			<key>SockFamily</key>
+			<string>Unix</string>
+			<key>SockPathMode</key>
+			<integer>438</integer>
+			<key>SockPathName</key>
+			<string>/var/run/mDNSResponder</string>
+		</dict>
+	</dict>
+	<key>UserName</key>
+	<string>_mdnsresponder</string>
+	<key>WaitForDebugger</key>
+	<false/>
+</dict>
+</plist>
