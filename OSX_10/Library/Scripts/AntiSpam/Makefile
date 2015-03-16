@@ -17,18 +17,20 @@
 TARGET	?= UploadSpam.app
 DESTDIR	?= /Library/Scripts/AntiSpam
 
+BLDDIR	:= build
 SOURCE	:= UploadSpamToKnujOn.applescript
 
-$(TARGET): $(SOURCE)
+$(BLDDIR)/$(TARGET): $(SOURCE)
+	test -d $(BLDDIR) || mkdir $(BLDDIR)
 	osacompile -o $@ $<
 
-$(DESTDIR)/$(TARGET): $(TARGET)
+$(DESTDIR)/$(TARGET): $(BLDDIR)/$(TARGET)
 	ditto $< $@
 	chgrp -R admin $@
 
-compile: $(TARGET)
+compile: $(BLDDIR)/$(TARGET)
 
 install: $(DESTDIR)/$(TARGET)
 
 clean:
-	rm -r $(TARGET)
+	rm -rf $(BLDDIR)
